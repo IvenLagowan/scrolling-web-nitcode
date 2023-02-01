@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Full Screen Scroll Wesite - NitCode</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+            <button class="tablink" onclick="openPage('News', this, 'green')"
+                id="defaultOpen">News</button>
+            <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+            <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+            <div class="slides slide1">
+                <img src="images/pic-1.png">
+                <h2>I'm a product Design.</h2>
+            </div>
+            <div class="slides slide2">
+                <img src="images/pic-2.png">
+                <h2>I develop web and mobile apps.</h2>
+            </div>
+            <div class="slides slide3">
+                <img src="images/pic-3.png">
+                <h2>I live in Unted States</h2>
+            </div>
+        </div>
+
+        <script>
+            function openPage(pageName,elmnt,color) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+              }
+              document.getElementById(pageName).style.display = "block";
+              elmnt.style.backgroundColor = color;
+            }
+            
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+            </script>
+    </body>
+</html>
